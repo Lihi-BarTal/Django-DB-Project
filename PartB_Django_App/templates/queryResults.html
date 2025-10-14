@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body bgcolor="#e9967a">
+<h1>Query 1:</h1>
+<table border ="1" width="40%">
+    <th>App Name</th>
+    <th>Avg Grade</th>
+    {% for content in query1_results %}
+    <tr>
+        <td>{{ content.AppName}}</td>
+        <td>{{ content.AvgGrade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h1>Query 2:</h1>
+<table border ="1" width="40%">
+    <th>Contact Name</th>
+    <th>Contact Phone</th>
+    <th>Leading Apps Num</th>
+    {% for content in query2_results %}
+    <tr>
+        <td>{{ content.ContactsName }}</td>
+        <td>{{ content.Contactphone }}</td>
+        <td>{{ content.numGoodApps }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h1>Query 3:</h1>
+<table border ="1" width="40%">
+    <th>City</th>
+    <th>App Name</th>
+    <th>Installations Num</th>
+    {% for content in query3_results %}
+    <tr>
+        <td>{{ content.city }}</td>
+        <td>{{ content.app }}</td>
+        <td>{{ content.count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'index' %}">Home</a>
+<br>
+<a href="{% url 'AddApplication' %}" target="">Add Application</a>
+<br>
+<a href="{% url 'InstallApplication' %}" target="">Install Application</a>
+<br>
+<a href="{% url 'RemoveApplication' %}" target="">Remove Application</a>
+</body>
+</html>

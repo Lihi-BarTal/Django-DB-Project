@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Application</title>
+    <style>
+        body {
+            background-color: #e9967a;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        form {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        select, input[type="submit"] {
+            font-size: 18px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        a {
+            display: block;
+            font-size: 20px;
+            margin-top: 10px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body bgcolor="#e9967a">
+<h1>Add New Application</h1>
+{% if errorMessage %}
+    <div style="color: red;">{{ errorMessage }}</div>
+{% endif %}
+
+<form method="POST">
+    {%  csrf_token %}
+    App Name: <textarea name = 'aName' rows="1" cols="80"></textarea><br>
+    App Category:
+        <select id="aCategory" name="aCategory" required size="5">
+        {% for catagory in catagoriesToPresent %}
+        <option value="{{ catagory }}">{{ catagory }}</option>
+        {% endfor %}
+
+    </select>
+    App Size: <input type = "number" name = "aSize">
+    Tag <BUTTON>
+    <button type ="submit" value="Send">Submit</button>
+</BUTTON>
+
+</select>
+</form>
+<a href="{% url 'index' %}">Home</a>
+<br>
+<a href="{% url 'queryResults' %}" target="">Query Results</a>
+<br>
+<a href="{% url 'InstallApplication' %}"target="">Install Application</a>
+<br>
+<a href="{% url 'RemoveApplication' %}" target="">Remove Application</a>
+</body>
+</html>
