@@ -1,26 +1,25 @@
 # 💾 Relational Database & Web Application (SQL/Django)
 
-## University Project: Phone System Management & Database Analytics
+## University Project: Full-Stack Database System
 
-This project is a comprehensive **Full-Stack** solution that demonstrates expertise in **Relational Database Design (SQL)** and the implementation of a functional web front-end using the **Django Web Framework**.
-
-The application, simulating a "Confused Student's Phone System," allows for the management of applications, contacts, and files, while enforcing complex data integrity and storage rules.
+This repository presents a comprehensive **Full-Stack** project combining **Advanced Relational Database Design (SQL)** with a functional web application built on the **Django Framework**. The system serves as a management and analytics tool for applications and contacts, demonstrating expertise in both back-end data integrity and front-end application logic.
 
 ---
 
 ## 🎯 Core Technical Focus
 
-### 1. Advanced Database Design & SQL
+### 1. Database Design and Analytical SQL
 
-* **Conceptual Modeling:** Full **Entity-Relationship Diagram (ERD)** and robust **Data Definition Language (DDL)** scripts (`Q2.sql`) to enforce complex business rules and data integrity.
-* **Analytical Querying:** Implementation of advanced SQL logic using **VIEWS** (`view_queries.sql`) and Python wrappers (`Views.py`) to extract specific data insights, including:
-    * Identifying contacts with highly-rated and highly-installed apps (e.g., **"Haifa Leading Apps"**).
-    * Pinpointing **"Exceeding Cities"**—where all contacts have surpassed a specific storage threshold.
+* **Conceptual Modeling:** Full **Entity-Relationship Diagram (ERD)** and robust **Data Definition Language (DDL)** scripts (`Q2.sql`) defining the schema for Contacts, Applications, Meetings, and Files.
+* **Data Integrity:** The DDL enforces complex rules, constraints, and relationships crucial for maintaining system integrity.
+* **Advanced Querying:** Complex analytical logic is executed via **SQL Views** and raw queries (`view_queries.sql`, `Views.py`). These queries aggregate data to derive deep insights, such as identifying relationships between usage patterns and contact characteristics.
 
 ### 2. Django Web Application Logic
 
-The Django application (using **ORM** via `models.py`) provides an interactive interface with critical business logic:
+The Django application provides an interactive front-end, with logic implemented in Python (`views.py`) and rendered via HTML templates:
 
-* **Controlled Data Entry:** Enables **Adding** new applications with size validation (strictly between 100MB and 200MB).
-* **Resource Management:** Implements **Installation/Removal** logic that strictly enforces a **1800MB** total storage limit, preventing the user from exceeding phone capacity.
-* **Data Presentation:** Displays the complex SQL analytical query results on a dedicated front-end page (`queryResults.html`).
+* **Controlled Data Management:** Interfaces are provided for **Adding** and **Installing/Removing** applications.
+* **Business Rule Enforcement:** Application logic ensures strict enforcement of critical business rules, including:
+    * **Application Size Validation** upon creation.
+    * **Total Storage Limit** tracking and enforcement during installation.
+* **Data Presentation:** Dedicated pages display the results of the complex analytical SQL queries.
