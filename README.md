@@ -1,31 +1,39 @@
 # 💾 Relational Database & Web Application (SQL/Django)
 
-**University Project - Database Systems and Application Development**
+## University Project: Confused Student's Phone System
+
+This project is a comprehensive **Full-Stack** solution for a Database Management course, combining **Relational Database Design (SQL)** with a **Django Web Application** for interactive data management and analytics.
 
 ---
 
-## 💡 Overview
-This project involves the full design, implementation, and querying of a complex relational database system, coupled with a basic web front-end application built using the **Django Web Framework**. The system is designed to manage contacts, applications, meetings, files, and associated permissions/usage logs.
+## 🎯 Core Technical Focus
 
-## 🎯 Core Technical Areas
+The repository demonstrates proficiency across two integrated disciplines:
 
-The repository demonstrates expertise in two integrated technical disciplines:
+### 1. Database Design & Advanced SQL
 
-1.  **Database Design & SQL:**
-    * **Schema (DDL):** Creation of a detailed **Entity-Relationship Diagram (ERD)** and the necessary Data Definition Language (DDL) to enforce complex business rules and data integrity (Primary Keys, Foreign Keys, etc.).
-    * **Advanced Querying:** Implementation of complex analytical queries and **SQL Views** to extract specific data insights (e.g., analyzing contact networks, application usage, and identifying trends).
+* **Conceptual Modeling:** Full **Entity-Relationship Diagram (ERD)** design (`ERD.pdf`).
+* **Schema Implementation:** **Data Definition Language (DDL)** scripts (`Q2.sql`) defining tables for Contacts, Applications, Files, Meetings, and Permissions, enforcing complex integrity constraints.
+* **Analytical Querying:** Implementation of advanced SQL views and queries (`Views.py`, `Queries.py`, `view_queries.sql`) to perform complex analysis, such as identifying **"Haifa Leading Apps"** and **"Exceeding Cities"**.
 
-2.  **Web Application Integration (Django):**
-    * **ORM Mapping:** Utilizing the **Django ORM** (`models.py`) to automatically map the relational schema into Python objects, ensuring seamless interaction between the application and the database.
-    * **Front-End (Templates):** Basic HTML templates (`index.html`, `queryResults.html`, etc.) are created for user interaction, including adding, installing, and removing applications.
-    * **App Logic:** Python files (`Views.py`, `Urls.py`) define the application logic, URL routing, and handle user requests against the database.
+### 2. Django Web Application (Management & Analytics)
 
-## 📄 Key Files & Components
+The application provides a user interface for managing the database, built on a single `phone_app` module.
 
-| File Name | Description | Focus |
+| Component | Description |
+| :--- | :--- |
+| **Data Mapping** | **Django ORM** (`models.py`) connects directly to the established SQL schema. |
+| **Functionality** | User interfaces for **Adding** new applications with size validation (100MB-200MB), **Installing/Removing** applications while strictly enforcing a **1800MB** total storage limit. |
+| **Views & Logic** | **Views** (`views.py`) manage all application logic, user input validation, and database updates, including the use of **Raw SQL** for efficient analytical query execution. |
+
+---
+
+## 📄 Key Project Files
+
+| File Name | Description | Part |
 | :--- | :--- | :--- |
-| **`ERD.pdf`** | **Full Database Schema Design.** Contains the Entity-Relationship Diagram and notes on modeling constraints. | **Design** |
-| **`models.py`** | **Django ORM Models.** The Python objects generated to map directly to the relational database tables. | **ORM** |
-| **`view_queries.sql` / `Q2.sql`** | SQL Scripts for **DDL (Schema Creation)** and defining complex **Views** and queries. | **SQL Logic** |
-| **`Views.py` / `urls.py`** | Core application logic, URL routing, and database interaction handlers. | **Django Logic** |
-| **`.html` Files** | Front-end templates for user interactions (Add, Install, Remove application screens) and query display. | **Front-End** |
+| **`ERD.pdf`** | Conceptual design and modeling assumptions. | A |
+| **`Q2.sql`** | Full DDL script for table creation and integrity enforcement. | A |
+| **`views.py`** | Django application logic, database access, and validation handlers. | B |
+| **`models.py`** | Django ORM classes for `Contacts`, `Applications`, and `AppUsers`. | B |
+| **`view_queries.sql`** | Dedicated SQL views for complex Django query results (e.g., `view6`, `view7`). | B |
